@@ -93,6 +93,10 @@ public class HangMan {
 		}
 	
 	
+	System.out.println("#######");
+	System.out.println("$$$$$$$$");
+	System.out.println("########");
+	
 	
 	}
 }
