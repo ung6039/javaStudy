@@ -73,6 +73,8 @@ public class 반복문2 {
 			if(i% 5== 0) {
 				System.out.println();
 				bCheck = !bCheck;
+				// !boolean >> true // false 값이 계속 바뀜
+				
 			}
 			i++;
 			c++;

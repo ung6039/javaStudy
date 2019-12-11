@@ -45,7 +45,7 @@ public class UpDown {
 			System.out.println("1~100까지의 정수 입력 : ");
 			int user =sc.nextInt();
 			// 오류
-			if(user<1 || user >100) {
+			if(user <1 || user >100) {
 				System.out.println("잘못된 입력입니다.");
 				continue; // 종료하지 않고 반복문을 다시 실행시키는 것 반복 선택문
 				// while문의 조건식으로 이동
