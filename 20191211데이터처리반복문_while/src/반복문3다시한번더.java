@@ -64,14 +64,13 @@ public class 반복문3다시한번더 {
 			int res =com-user;
 			
 			switch(res){
-				// switch case에 들어올때 1개의 값이 들어오면 더 편하다
+				// switch case에 들어올때 1개의 값이 들어오면 더 편하다.
 			
 			case -1:
 			case 2:
 				win++;
 				System.out.println("이김");
 				break;
-			
 			case 1:
 			case -2:
 				lose++;
