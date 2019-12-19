@@ -23,15 +23,18 @@ public class P20191217 {
 //		4. 사용자는 0과 중복된 수를 입력 할 수 없다.
 //		   =>0을 입력하게 되면 8인수가 출력되기 때문에 안됨
 //		5. 전부 맞게 되면 종료 
+		
+		
+
 	int s=0,b=0;
 	int com[] = new int[3];
 	int user[] = new int[3];
 	int su=0;
 	Scanner sc = new Scanner(System.in);
-		boolean bCheck =true;
+		boolean bCheck =false;
 			// 중복없는 랜덤 값 출력
 		for(int i =0; i<com.length; i++) {
-				
+				bCheck =true;
 		while(bCheck) {
 				su = (int)(Math.random()*9)+1;
 				// 문제 1 0이 출력됨
@@ -57,13 +60,13 @@ public class P20191217 {
 			// SB를 처리
 			s=0;
 			b=0;
-			for(int i=0; i<user.length; i++) {
-				for(int j =0; j<user.length;j++) {
+			for(int i=0; i<3; i++) {
+				for(int j =0; j<3;j++) {
 					if(com[i] == user[j]) {
-						 if(i ==j) {
-						  s++;
-						 }
-						 else b++;
+						if(i ==j) {
+							s++;
+						}
+						else b++;
 					}
 				}
 			}
