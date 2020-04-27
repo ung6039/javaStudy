@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:websocket="http://www.springframework.org/schema/websocket"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+<!-- 클래스( 관리할 클래스를 등록 ) 
+	클래스 등록 <bean>, 패키지 단위 <context:component-scan >,
+	스프링에 등록해서 사용하는 클래스
+	1. DAO,Manager,Model ...
+	2. VO(DTO) => 일반 데이터형 (등록 하지 않는다)
+	   ======
+	   	int, double .. (vo는 제외를 시킴) )) 자바 기본형과 유사하게 사용??
+-->
+<!-- 
+	DI(의존성 주입)
+	   =======
+	   1) property DI ( property DI _> 값을 넣어달라고 이야기를 하는 것(주입)
+	   2) constructor DI
+	   3) method DI
+
+	init-method 	   
+	자동 -> 자동 로그인
+	DB -> Driver 등록
+	
+ -->
+	<bean id="sa" class="com.sist.spring.Sawon" scope="singleton" init-method="display">
+		<property name ="sabun" value="1"></property>
+		<property name ="name" value="홍길동"></property>
+		<property name ="dept" value="개발부"></property>
+	</bean>
+	<!-- 메모리 할당  new 사용(x) -->
+	<!-- 모든 클래스들이 등록이 되어야 사용 가능 -->
+	<!--  매개변수가 없는 생성자 :: class="com.sist.spring.Sawon" -->
+	<bean id="ssai" class="com.sist.spring.Sawon" scope="singleton" init-method="display">
+		<property name ="sabun"><value>1</value></property>
+		<property name ="name"><value>심청이</value></property>
+		<property name ="dept"><value>영업부</value></property>
+	</bean>
+	
+	<!-- 주로 사용하는 방식 (set,get)은 잘 사용하지 않음 -->
+	<bean id="sa2" class="com.sist.spring.Sawon"
+	p:sabun="3"
+	p:name ="춘향이"
+	p:dept ="기획부"
+	/>
+	<!--
+		매개 변수가 있는 생성자 호출 
+		Sawon sa3 = new Sawon();
+	-->
+	<bean id ="sa3" class="com.sist.spring.Sawon">
+	<!--
+		
+		0  sabun 
+		1  name
+		2  dept
+		매개변수가 있는 생성자를 호출할 경우 매개변수 값을 설정 해주어야 한다.
+		
+	 -->
+		<constructor-arg value="113" index="0"/>
+		<constructor-arg value="김사또" index="1"/>
+		<constructor-arg value="자재부" index="2"/>
+	</bean>
+		
+	<bean id="sa4" class="com.sist.spring.Sawon"
+		c:sabun="2"
+		c:name="수신기"
+		c:dept="총무부"
+	/>
+	<bean id="sa5" class="com.sist.spring.Sawon"
+		c:_01="3"
+		c:_
+	/>
+</beans>

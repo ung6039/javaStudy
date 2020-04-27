@@ -1,0 +1,7 @@
+package com.sist.spring2;
+
+public interface Hello {
+
+	public default void display();
+	publis void sayHello();
+}
