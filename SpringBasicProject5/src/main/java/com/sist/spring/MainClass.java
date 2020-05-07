@@ -24,6 +24,7 @@ public class MainClass {
 			System.out.println(vo.getEmpno()+" "+vo.getEname()+" ~~"+vo.getSal());
 		}
 	*/
+		
 		MainClass mcc = new MainClass();
 		MainClass mc= (MainClass) app.getBean("mainClass");
 		System.out.println(mc.dao);
