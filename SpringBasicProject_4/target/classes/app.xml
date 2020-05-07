@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<!-- AOP 설정 -->
+	
+	<!--  예시  basicDataSource
+			public class BasicDataSource
+			{
+				private String driverClassName;
+				public void setDriverClassName(String drvierClassName){
+					this.driverClassName = driverClassName;
+				{
+			}
+			p: -> Set메서드로 값을 넣어주는 기능
+	 -->
+	<!-- 1. 데이터베이스 정보를 전송( sqlSession을 등록 ) -->
+		
+		<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource"
+			p:driverClassName="oracle.jdbc.driver.OracleDriver"
+			p:url="jdbc:oracle:thin:@localhost:1521:XE"
+			p:username="hr"
+			p:password="happy"
+			p:maxActive="20"
+			p:maxIdle="10"
+			p:maxWait="-1"		
+		/>
+	<!-- 트랜잭션 처리 -->
+	<!-- SqlSessionFactory생성 -->
+		<bean id="ssf" class="org.mybatis.spring.SqlSessionFactoryBean"
+			p:dataSource-ref="ds"
+			p:configLocation="classpath:Config.xml"
+		/>
+		<!-- p:configLocation="classpath:Config.xml"
+			classpath:: root를 의미 다른 공간에 있는 경우 경로를 지정해주어야함
+		 -->
+		 <bean id="dao" class="com.sist.dao.EmpDAO"
+		 	p:sqlSessionFactory-ref="ssf"/>
+		 <!-- p:sqlSessionFactory:: sqlSessionDAOsurport를 상속 받아서 이 안에 있음 -->
+		
+	<!-- SqlSessionFactory = DAO에 전송 -->
+	
+</beans>
