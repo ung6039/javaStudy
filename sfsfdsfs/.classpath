@@ -2,6 +2,11 @@
 <classpath>
 	<classpathentry excluding="sfsfdsfs/" kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/ung60/Downloads/jsoup-1.12.1.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/sist185/Downloads/jsoup-1.12.1 (3).jar"/>
+	<classpathentry kind="lib" path="C:/Users/sist185/Downloads/lombok-1.18.12.jar"/>
+>>>>>>> branch 'master' of https://github.com/ung6039/SpringBasic.git
 	<classpathentry kind="output" path="bin"/>
 </classpath>
