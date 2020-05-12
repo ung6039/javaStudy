@@ -21,6 +21,7 @@ public class One_oneManager {
 		int page=1;
 //		for(page =1; page<=17; page++){
 		String code1 = "햇반";
+		
 			try{
 				System.out.println("!!");
 				String url1="http://search.11st.co.kr/Search.tmall?kwd=%25ED%2596%2587%25EB%25B0%2598";
