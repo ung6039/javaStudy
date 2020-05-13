@@ -9,11 +9,11 @@ import java.util.Base64.Encoder;
 public class temp {
 
 	public static void base64(){
-		String text ="%25ED%2596%2587%25EB%25B0%2598";
+		String text ="햇반";
 		try{
 			String temp = URLEncoder.encode(text, "UTF-8");
 			System.out.println("!! "+temp);
-			temp = URLDecoder.decode(text,"UTF-8");
+			temp = URLDecoder.decode(text,"MS949");
 			System.out.println("??"+temp);
 		}catch(Exception ex){
 			ex.printStackTrace();
