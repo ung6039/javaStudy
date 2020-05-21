@@ -167,8 +167,7 @@
 			render(){
 				return(
 					<input type="text" size="30" className="input-sm" placeholder="검색"
-						value={this.props.ss} OnChange=(this.OnChange)
-					/>
+						value={this.props.ss} OnChange={this.OnChange} />
 				)
 			}
 		}
