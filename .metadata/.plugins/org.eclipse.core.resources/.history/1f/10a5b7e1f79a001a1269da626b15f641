@@ -1,0 +1,82 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
+</head>
+<body>
+   <div class="container" id="root"></div>
+   <script type="text/babel">
+    /*
+         <App name="홍길동"> => new App("홍길동"); => 변경할 수 없다
+         props
+         state : 변경이 가능 
+
+         => <App/>
+            1) constructor() : 초기화 (변수 설정)
+            2) render() : 데이터를 받아서 화면 출력 (HTML)
+            3) componentDidMount() : 완료 => 브라우저에 출력 
+              =====================
+                           완료가 된 다음 => 화면을 변경 ===> render()
+                           ==========
+                                                      리렌더링 => setState()
+    */
+    	class App extends React.Component{
+        // 생성자 
+        constructor(props){
+           super(props);// 속성값 받기 
+           // 서버에서 들어오는 데이터를 받아서 저장 
+           this.state={
+                music:[],
+                ss:''
+           }
+        }
+
+        componentDidMount()
+        {
+           // 서버연결 
+           axios.get('http://localhost:808/web/main/music.do').then(function(result){
+                console.log(result.data);
+                this.state.music=result.data;
+                // setState(){render()}
+           })
+        }
+        // 화면 출력 (HTML)
+        render(){
+           return (
+               <h1>React Music</h1>
+           )
+        }
+        
+    }
+    class MusicTable extends React.Component{
+    }
+    class MusicRow extends React.Component{
+    }
+    class SearchBar extends React.Component{
+    }
+    ReactDOM.render(<App/>,document.getElementById('root'));
+    // String data=new App().render() ==> $('root').html(data)
+   </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

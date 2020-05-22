@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Foodle - 복사본">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <property name="context-root" value="Foodle_-_복사본"/>
+        <property name="java-output-path" value="/Foodle - 복사본/TeamProject/bin"/>
+    </wb-module>
+</project-modules>

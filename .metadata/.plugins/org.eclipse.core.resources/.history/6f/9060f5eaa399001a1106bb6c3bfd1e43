@@ -1,0 +1,15 @@
+package com.wsl.crawling;
+
+import javax.annotation.Resource;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CoupangDAO {
+
+	@Resource
+	private CoupangMapper mapper;
+	
+	
+	
+}

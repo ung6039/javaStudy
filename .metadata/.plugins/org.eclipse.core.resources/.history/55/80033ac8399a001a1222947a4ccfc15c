@@ -1,0 +1,17 @@
+package com.spring.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import java.util.*;
+import com.sist.dao.*;
+
+// 문자열을 전송하기 위해서는 RestController
+@RestController
+public class MusicRestController {
+	
+	@Autowired
+	private MusicDAO dao;
+	
+	
+	
+}

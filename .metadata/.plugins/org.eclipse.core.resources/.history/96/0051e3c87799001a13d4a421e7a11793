@@ -1,0 +1,61 @@
+package com.sist.aspect;
+
+import org.apache.ibatis.plugin.Signature;
+import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
+import org.springframework.stereotype.Component;
+
+@Aspect
+@Component
+public class MyAspect{
+/*
+ 	public void emp_select(){
+ 		getConnection() :: Before
+ 		문장
+ 		disConnection() :: After
+ 	}
+ */
+	//메소드 호출전
+	@Before("execution(* com.sist.dao.EmpDAO.emp_*(..))")
+	public void getConnection(){
+		System.out.println("오라클 연결");
+	}
+	// finally
+	@After("execution(* com.sist.dao.EmpDAO.emp_*(..))")
+	public void disConnection(){
+		System.out.println("오라클 연결 해제");
+	}
+	
+	// 정상수행이 된 경우
+	@AfterReturning(value="execution(* com.sist.dao.EmpDAO.emp_*(..))",returning="ret")
+	public void returnValue(Object ret){
+		// delete 
+		if(ret!=null)
+		System.out.println(ret);
+	}
+	// 메서드 수행하는 과정 => 오류가 발생했을 경우 처리
+	@AfterThrowing(value="execution(* com.sist.dao.EmpDAO.emp_*(..))",throwing="ex")
+	public void exceptionValue(Throwable ex){
+		System.out.println(ex.getMessage());
+	}
+	
+	@Around("execution(* com.sist.dao.EmpDAO.display(..))")
+	public Object display(ProceedingJoinPoint jp) throws Throwable {
+		System.out.println(jp.getSignature().getName());
+		long start = System.currentTimeMillis();
+		//setAutoCommit(false);
+		Object obj = jp.proceed();
+		// conn.commit()
+		long end =System.currentTimeMillis();
+		System.out.println("수행 시간 : "+(end-start));
+		
+		return obj;
+	}
+}
+

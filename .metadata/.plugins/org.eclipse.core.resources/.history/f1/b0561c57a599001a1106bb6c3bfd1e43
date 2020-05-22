@@ -1,0 +1,11 @@
+package com.wsl.vo;
+
+public class SearchVO {
+
+
+	private int codeNo;
+	private String keyword;
+	private int count;
+	private Date datetime;
+	
+}

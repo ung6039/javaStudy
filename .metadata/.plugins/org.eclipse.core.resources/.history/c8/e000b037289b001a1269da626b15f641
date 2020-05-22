@@ -1,0 +1,16 @@
+package com.sist.dao;
+
+public class BoardVO {
+
+	// member
+	/*
+	 	 ID VARCHAR2(1000), 
+	PWD VARCHAR2(1000) default '1234', 
+	name VARCHAR2(1000), 
+	EMAIL VARCHAR2(1000) default 'wiseSingleLife@naver.com', 
+	SEX VARCHAR2(1000), 
+	TEL VARCHAR2(1000) default '010-000-000', 
+	ADMIN CHAR(1 BYTE) DEFAULT 'n'
+	 */
+	// board
+}

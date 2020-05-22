@@ -1,0 +1,19 @@
+package com.wsl.crawling;
+
+import org.apache.ibatis.annotations.Select;
+
+import com.wsl.vo.*;
+
+public interface CoupangMapper {
+
+	@Select("SELECT * FROM search_keyword")
+	public SearchVO ListAllData();
+	
+	
+	@Insert()
+	</select>
+	<insert id="InsertCostco" parameterType="CroVO">
+		
+	</insert>
+		
+}

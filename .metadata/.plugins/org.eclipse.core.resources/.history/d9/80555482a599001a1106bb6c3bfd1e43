@@ -1,0 +1,22 @@
+package com.wsl.vo;
+
+public class CoupangVO {
+
+	private String productCode;
+	private String tags;// 검색키워드
+	private int codeNo;
+	private int rank;
+	private String name;
+	// 할인 전 가격
+	private int basePrice;
+	//100g당 가격
+	private String unit_price;
+	//별점
+	private double rate; 
+	private int review_count;
+	private String discount;
+	
+	private int lookup;
+	private Date lookuptime;
+	private String img;
+}

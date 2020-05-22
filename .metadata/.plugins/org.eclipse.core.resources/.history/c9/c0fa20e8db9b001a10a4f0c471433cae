@@ -1,0 +1,9 @@
+package com.sist.temp;
+
+import java.sql.Connection;
+
+public class MemberDAO {
+
+	private Connection conn;
+	
+}

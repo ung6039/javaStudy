@@ -1,0 +1,12 @@
+package com.sist.common;
+
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class LogAspect {
+
+	// empController에 등록된 모든 메서드
+	@Around("execution(* com.sist.web.EmpController.*(..))")
+}

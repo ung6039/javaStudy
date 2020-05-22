@@ -1,0 +1,13 @@
+package com.sist.temp;
+
+import com.sist.temp.*;
+public class MainClass {
+
+	
+	public static void main(String[] args) {
+		
+		MemberDAO dao = new MemberDAO();
+
+	}
+
+}

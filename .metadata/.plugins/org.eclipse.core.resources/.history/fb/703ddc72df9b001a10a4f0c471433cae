@@ -1,0 +1,26 @@
+package com.sist.temp;
+
+import java.util.List;
+
+import com.sist.temp.*;
+public class MainClass {
+
+	
+	public static void main(String[] args) {
+		
+		MemberDAO dao = new MemberDAO();
+		MemberVO vo = new MemberVO();
+		vo.setNo(1);
+		vo.setName("홍반장");
+		vo.setSex("남");
+		
+		
+		MemberVO vo1 = new MemberVO();
+		vo1.setNo(1);
+		vo1.setName("홍반점");
+		vo1.setSex("여");
+		
+		dao.memberInsert(vo, vo2);
+	}
+
+}

@@ -1,0 +1,31 @@
+package com.sist.dao;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.SelectKey;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import java.util.*;
+
+@Repository
+public class EmpDAO {
+
+	@Autowired
+	private static EmpMapper mapper;
+	
+	public List<EmpVO> empAllData(){
+		return mapper.empAllData();
+	}
+	
+public List<Integer> empGetMgr();
+	
+	@Select("SELECT DISTINCT job FROM emp")
+	public List<String> empGetJob();
+	
+	@SelectKey(keyProperty="empno",resultType=int.class,before=true,
+			statement="SELECT NVL(MAX(empno)+1,1) as empno FROM emp")
+	@Insert("INSERT INTO emp VALUES("
+			+ "#{empno},#{ename},#{job},#{mgr},SYSDATE,#{sal},#{comm},#{deptno})")
+	public void InsertEmp();
+	
+}

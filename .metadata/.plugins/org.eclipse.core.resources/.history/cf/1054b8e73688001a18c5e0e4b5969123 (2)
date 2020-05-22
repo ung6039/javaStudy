@@ -1,0 +1,49 @@
+package com.sist.spring;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainClass {
+
+	
+	public static void main(String[] args) {
+		
+		// 스프링을 사용하려면 XML 파싱을 해야함
+		// xml 파싱
+		ApplicationContext app =
+				new ClassPathXmlApplicationContext("app.xml");
+		// app.xml 을 파싱해서 -> 모든 정보를 넘겨줌
+		// Class 관리자 
+		/*
+		 	 class A
+		 	 A a = new A();
+		 	 	=> A b = a;
+		 	 A b = new A();
+		 */
+		// 등록된 클래스를 사용 getBean()을 이용해 클래스를 찾아옴
+		Sawon sa = (Sawon)app.getBean("sa3");
+		// DL+DI= DI(Ioc)
+		System.out.println("sa ="+sa);
+		System.out.println("사번 : "+sa.getSabun());
+		System.out.println("이름 : "+sa.getName());
+		System.out.println("부서 : "+sa.getDept());
+		
+// 		id 명칭을 주고 값을 얻어옴
+// 		id는 중복되면 안됨
+//		sa.display();
+//		sa.setSabun(1);
+//		sa.setName("홍반장");
+//		sa.setDept("개발부");
+//		Sawon sa1 = (Sawon) app.getBean("sa");
+//		System.out.println("sa1 ="+sa1);
+//		sa1.setSabun(2);
+//		sa1.setName("황부장");
+//		sa1.setDept("홍보부");
+//		sa1.display(); // 생성과 소멸은 spring에서 처리
+//		System.out.println("sa  : "+sa.getName());
+//		System.out.println("sa1 : "+sa1.getName());
+		
+		
+		
+	}
+}

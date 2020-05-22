@@ -1,0 +1,16 @@
+package com.sist.dao;
+
+public class MusicVO {
+	
+	private int mno;
+	private String title;
+	private String singer;
+	private String poster;
+	private String album;
+	private int idcrement;
+	private String state;
+	private String key;
+	private int hit;
+	
+	
+}

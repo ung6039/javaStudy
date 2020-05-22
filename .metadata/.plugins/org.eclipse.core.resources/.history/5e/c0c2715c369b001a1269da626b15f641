@@ -1,0 +1,8 @@
+package com.sist.dao;
+
+public interface BoardMapper {
+
+	@Insert()
+	public void memberInsert(BoardVO vo);
+	@
+}

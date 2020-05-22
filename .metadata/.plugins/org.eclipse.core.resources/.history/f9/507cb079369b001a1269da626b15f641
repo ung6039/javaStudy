@@ -1,0 +1,15 @@
+package com.sist.dao;
+
+import org.apache.ibatis.annotations.Insert;
+
+public interface BoardMapper {
+
+	@Insert("INSERT INTO"
+			)
+	public void memberInsert(BoardVO vo);
+	
+	@Insert(""
+			+ ""
+			+ "")
+	public void BoardInsert(BoardVO vo);
+}

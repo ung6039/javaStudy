@@ -1,0 +1,18 @@
+package com.sist.common;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
+@Component
+@Aspect
+public class LogAspect {
+
+	// empController에 등록된 모든 메서드
+	@Around("execution(* com.sist.web.EmpController.*(..))")
+	public Object around(ProceedingJoinPoint jp){
+		System.out.println("사용자 요청 기능(함수 명) : "+jp.getSignature().getName());
+		long start = System.currentTimeMillis()
+	}
+}

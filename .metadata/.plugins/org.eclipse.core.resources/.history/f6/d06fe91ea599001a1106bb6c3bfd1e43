@@ -1,0 +1,27 @@
+package com.wsl.crawling;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.annotations.Select;
+import org.springframework.stereotype.Repository;
+
+import com.wsl.vo.*;
+
+@Repository
+public class CoupangDAO {
+
+	@Resource
+	private CoupangMapper mapper;
+	
+	
+	public List<SearchVO> keywordAllData(){
+		return mapper.keywordAllData();
+	}
+	
+	public void InsertCoupang(CoupangVO vo)
+	
+
+	
+}

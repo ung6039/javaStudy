@@ -1,0 +1,18 @@
+package com.sist.web;
+
+import org.aspectj.lang.annotation.After;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import com.sist.dao.*;
+
+@Controller
+public class EmpController {
+	
+	@Autowired
+	private EmpDAO dao;
+	
+	@GetMapping("emp/list.do")
+	public 
+	
+	
+}

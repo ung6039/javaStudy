@@ -1,0 +1,10 @@
+package com.wsl.web;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class UNGTestController {
+
+	@RequestMapping("graph/graph")
+	
+}

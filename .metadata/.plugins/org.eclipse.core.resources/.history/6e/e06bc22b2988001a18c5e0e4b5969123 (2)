@@ -1,0 +1,13 @@
+package com.sist.spring2;
+
+public interface Hello {
+
+	public default void display(){}
+	// 구현된 메서드를 가져갈 수 있음 (구현된 메서드1
+	// 구현을 해도 되고 안해 됨
+	public void sayHello();
+	
+	public static void sayHello2(){}
+	// 구현된 메서드2
+	// 1.8
+}

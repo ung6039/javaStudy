@@ -1,0 +1,9 @@
+package com.sist.temp;
+
+public class MemberVO {
+	
+	private int no;
+	private String name;
+	private 
+
+}

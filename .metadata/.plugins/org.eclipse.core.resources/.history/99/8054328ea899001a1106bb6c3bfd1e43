@@ -1,0 +1,22 @@
+package com.wsl.crawling;
+
+import ;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Component
+public class main {
+	
+	@Autowired
+	private CoupangCrawling cw;
+	
+	public static void main(String[] args) {
+		
+		ApplicationContext app = new ClassPathXmlApplicationContext("/WEB-INF/config/application-context.xml");
+		main mc = (main)app.getBean("main");
+		mc.cw.sListData();
+		
+	}
+}

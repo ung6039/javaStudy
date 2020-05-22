@@ -1,0 +1,15 @@
+package com.wsl.crawling;
+
+import org.apache.tiles.request.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
+
+@Component
+public class main {
+	
+	public static void main(String[] args) {
+		
+		CoupangCrawling cw = new CoupangCrawling();
+		
+	}
+}

@@ -1,0 +1,12 @@
+package com.wsl.vo;
+
+import java.util.Date;
+
+public class SearchVO {
+
+	private int codeNo;
+	private String keyword;
+	private int count;
+	private Date datetime;
+	
+}

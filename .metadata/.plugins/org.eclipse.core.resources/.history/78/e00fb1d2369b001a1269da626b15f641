@@ -1,0 +1,17 @@
+package com.sist.dao;
+
+import org.apache.ibatis.annotations.Insert;
+
+public interface BoardMapper {
+
+	@Insert("INSERT INTO tmember(id,sex)"
+			+ "VALUES(#{id},#{sex})"
+			)
+	public void memberInsert(BoardVO vo);
+	
+	@Insert("INSERT INTO tboard(no,title,author,content,"
+			+ "regdate,hit,img)"
+			+ "VALUES"
+			+ "")
+	public void BoardInsert(BoardVO vo);
+}

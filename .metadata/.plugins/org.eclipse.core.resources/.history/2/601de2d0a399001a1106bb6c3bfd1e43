@@ -1,0 +1,10 @@
+package com.wsl.crawling;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class CoupangDAO {
+
+	
+	
+}

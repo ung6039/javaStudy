@@ -1,0 +1,12 @@
+package com.sist.spring1;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		
+		
+		Hello h = new Hello();
+		// 직접 가져다 쓰는 프로그램
+		h.display();
+	}
+}

@@ -1,0 +1,12 @@
+package com.sist.temp;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+public class MemberDAO {
+
+	private Connection conn;
+	private PreparedStatement ps;
+	
+	private String URL=
+}
