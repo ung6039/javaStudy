@@ -152,8 +152,8 @@ $(function(){
 	   						</form>
 	   					</td>
 	   				</tr>
-	   		</table>
 	   		</c:forEach>
+	   		</table>
    			<table class="table">
 	   				<tr>
 	   					<td><h4>댓글</h4></td>

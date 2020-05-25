@@ -32,7 +32,7 @@ public interface ReplyMapper {
 //	@Update()
 	@Update("UPDATE music_reply2 SET "
 		   +"group_step=group_step+1 "
-		   +"WHERE group_id=#{group_id} AND group_step > #{group_step}")
+		   +"WHERE group_id=#{group_id} AND group_step >= #{group_step}")
 	public void replyGroupStepIncrement(ReplyVO vo);
 	
 	@SelectKey(keyProperty="no",resultType=int.class,before=true,

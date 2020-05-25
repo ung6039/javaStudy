@@ -58,6 +58,7 @@ public class ReplyDAO {
 		
 		// 댓글에 댓글의 내용 저장
 		mapper.replyReplyInsert(vo);
+		mapper.replyGroupStepIncrement(vo);
 		mapper.replyDepthIncrement(pno);
 	}
 	public void replyUpdate(ReplyVO vo){

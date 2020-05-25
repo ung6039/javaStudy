@@ -15,12 +15,12 @@
        p:url="jdbc:oracle:thin:@localhost:1521:XE"
        p:username="hr"
        p:password="happy"
-    />
+    ></bean>
     <!-- 트랜잭션  -->
     <tx:annotation-driven proxy-target-class="false"/>
-    <bean id="transactionManger" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
-    	p:dataSource-ref="ds"
-    /> 
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager"
+    p:dataSource-ref="ds"
+    ></bean>
     <!-- SqlSessionFactory -->
     <bean id="ssf"
         class="org.mybatis.spring.SqlSessionFactoryBean"
