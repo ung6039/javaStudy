@@ -6,6 +6,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 
 public class MainClass {
+	//
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
